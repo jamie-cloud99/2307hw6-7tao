@@ -12,9 +12,11 @@
     "pinia": "^2.1.4",
     "tw-elements": "^1.0.0-beta3",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.4"
+    "vue-router": "^4.2.4",
+    "vue3-marquee": "^4.0.0"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.4",
     "@vitejs/plugin-vue": "^4.2.3",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.47.0",
