@@ -3,7 +3,7 @@
     <h3 class="font-Yese mb-2 text-[32px] lg:mb-3 xl:text-[48px]">
       {{ props.event.date }}
     </h3>
-    <hr class="mb-4 border-b-[3px] lg:mb-3" />
+    <hr class="mb-4 border-b-3 lg:mb-3" />
     <img
       class="mb-2 block h-[210px] w-full object-cover lg:mb-3 lg:h-[255px]"
       :src="$format.getImageUrl(props.event.imgPath)"

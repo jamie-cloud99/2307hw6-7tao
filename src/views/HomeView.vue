@@ -49,12 +49,7 @@
           </a>
         </li>
       </ul>
-      <h2
-        class="mb-6 flex items-center justify-between border-2 px-3 py-4 lg:mb-8 lg:px-8 lg:py-6"
-      >
-        <span class="font-Yese md:text-16 text-2xl">RECENT</span>
-        <span class="md:text-8 font-serif font-bold">近期活動</span>
-      </h2>
+      <SectionTitle :title="sections[0]" class="mb-6 lg:mb-8"/>
       <ul
         class="lg:mb-15 mb-8 grid grid-cols-1 gap-6 md:mb-12 md:grid-cols-2 md:gap-y-8 lg:grid-cols-3 lg:gap-y-12"
       >
@@ -66,12 +61,7 @@
           <EventCard :event="item" />
         </li>
       </ul>
-      <h2
-        class="mb-6 flex items-center justify-between border-2 px-3 py-4 lg:mb-8 lg:px-8 lg:py-6"
-      >
-        <span class="font-Yese md:text-16 text-2xl">ONLINE</span>
-        <span class="md:text-8 font-serif font-bold">線上活動</span>
-      </h2>
+      <SectionTitle :title="sections[1]" class="mb-6 lg:mb-8"/>
       <div class="mb-8 grid grid-cols-1 gap-x-6 gap-y-3 lg:grid-cols-12">
         <div class="col-span-1 lg:col-span-7">
           <img
@@ -107,7 +97,7 @@
       <TextMarquee />
     </div>
     <div class="container">
-      <div class="grid grid-cols-1 gap-y-6 lg:grid-cols-2 mb-12 lg:mb-15">
+      <div class="lg:mb-15 mb-12 grid grid-cols-1 gap-y-6 lg:grid-cols-2">
         <div class="col-span-1">
           <div class="divide-y-2 border-2">
             <div class="px-3 py-4 lg:px-8">
@@ -123,12 +113,12 @@
               </p>
               <ul class="space-y-4">
                 <li
-                  class="flex items-center gap-4 hover:text-secondary-dark"
+                  class="hover:text-secondary-dark flex items-center gap-4"
                   v-for="item in contactList"
                   :key="item.title"
                 >
                   <div
-                    class="flex h-8 w-8 items-center justify-center bg-primary text-white "
+                    class="flex h-8 w-8 items-center justify-center bg-primary text-white"
                   >
                     <i :class="item.icon"></i>
                   </div>
@@ -139,13 +129,13 @@
           </div>
         </div>
         <div class="col-span-1">
-          <div class="divide-y-2 border-2 lg:border-l-0 flex flex-col h-full">
+          <div class="flex h-full flex-col divide-y-2 border-2 lg:border-l-0">
             <div class="px-3 py-4 lg:px-8">
               <h2 class="lg:text-8 font-serif text-2xl font-bold uppercase">
                 #subscribe us
               </h2>
             </div>
-            <div class="px-3 py-4 lg:px-8 lg:py-8 flex-grow">
+            <div class="flex-grow px-3 py-4 lg:px-8 lg:py-8">
               <p class="mb-4 lg:mb-8">
                 訂閱電子報送折價券！ <br />定期精選文章資訊及最新優惠資訊，
                 <br />
@@ -157,21 +147,27 @@
                 placeholder="輸入Email"
               />
             </div>
-            <button type="button" class="btn w-full mt-auto border-primary">
-                確認訂閱
-                <span class="ml-1">»</span>
-              </button>
+            <button type="button" class="btn mt-auto w-full border-primary">
+              確認訂閱
+              <span class="ml-1">»</span>
+            </button>
           </div>
         </div>
       </div>
     </div>
-    <hr class="border-b-[3px] ">
+    <hr class="border-b-3" />
     <div class="py-12">
       <div class="container">
         <div class="flex justify-center">
-          <div class="w-full md:w-4/5 2xl:w-1/2 space-y-3 lg:space-y-4 text-center">
-            <p class="font-serif font-bold text-lg md:text-2xl lg:text-8">此刻打盹，你將做夢；此刻學習，你將圓夢</p>
-            <p  class="font-serif font-bold text-sm  md:text-base lg:text-lg">——我也不知道誰說的</p>
+          <div
+            class="w-full space-y-3 text-center md:w-4/5 lg:space-y-4 2xl:w-1/2"
+          >
+            <p class="lg:text-8 font-serif text-lg font-bold md:text-2xl">
+              此刻打盹，你將做夢；此刻學習，你將圓夢
+            </p>
+            <p class="font-serif text-sm font-bold md:text-base lg:text-lg">
+              ——我也不知道誰說的
+            </p>
           </div>
         </div>
       </div>
@@ -186,6 +182,7 @@ import EventCard from "../components/EventCard.vue";
 import TagComponent from "../components/TagComponent.vue";
 import TextMarquee from "../components/TextMarquee.vue";
 import AlbumsComponent from "../components/AlbumsComponent.vue";
+import SectionTitle from "../components/SectionTitle.vue";
 
 const events = eventStore();
 const categoryList = reactive([
@@ -217,7 +214,6 @@ const onlineEvent = reactive({
     "最近網路上很流行的AI程式 ChatGPT，可以用來聊天或是查詢、整理各種資料，不同的應用方式如雨後春筍般冒出來。<br>這個活動讓大家把自己最有特色的使用方法提出來讓大家參考，也會投票出最有趣的用法。<br>該讓其他人知道自己使用 ChatGPT 的姿勢才是最特別的那個了！",
   tags: ["競賽", "科技", "有趣"],
 });
-
 const contactList = reactive([
   {
     icon: "icofont-ui-email",
@@ -236,6 +232,17 @@ const contactList = reactive([
     title: "facebook",
     content: "7TAO七逃",
     link: "",
+  },
+]);
+
+const sections = reactive([
+  {
+    title: "近期活動",
+    engTitle: "Recent",
+  },
+  {
+    title: "線上活動",
+    engTitle: "Online",
   },
 ]);
 </script>

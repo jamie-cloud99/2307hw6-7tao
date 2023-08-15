@@ -1,5 +1,7 @@
 <template>
-  <header class="border-b-2 py-6 lg:border-b-[3px] sticky top-0 bg-light z-[100]">
+  <header
+    class="bg-light sticky top-0 z-[100] border-b-2 py-6 lg:border-b-3"
+  >
     <div class="container">
       <div class="items-center justify-between lg:flex">
         <div class="flex justify-between lg:gap-12">
@@ -36,11 +38,17 @@
           </button>
         </div>
         <div class="hidden lg:flex lg:gap-6">
-          <RouterLink to="/" class="font-Yese block text-lg hover:text-secondary-dark">
+          <RouterLink
+            to="/"
+            class="font-Yese hover:text-secondary-dark block text-lg"
+          >
             <i class="icofont-ui-file mr-1"></i>
             REGISTER
           </RouterLink>
-          <RouterLink to="/" class="font-Yese block text-lg hover:text-secondary-dark">
+          <RouterLink
+            to="/"
+            class="font-Yese hover:text-secondary-dark block text-lg"
+          >
             <i class="icofont-ui-user mr-1"></i>
             LOGIN
           </RouterLink>
@@ -48,7 +56,10 @@
       </div>
     </div>
   </header>
-  <MobileMenu :class="menuClass" class="lg:hidden transition-all duration-500"/>
+  <MobileMenu
+    :class="menuClass"
+    class="transition-all duration-500 lg:hidden"
+  />
 </template>
 
 <script setup>
@@ -57,15 +68,10 @@ import MobileMenu from "./MobileMenu.vue";
 
 const isOpen = ref(false);
 const menuClass = computed(() => {
-  return  isOpen.value ? "max-h-screen" : "max-h-0 overflow-hidden";
-})
-
-
+  return isOpen.value ? "max-h-screen" : "max-h-0 overflow-hidden";
+});
 
 const toggleMenu = () => {
   isOpen.value = !isOpen.value;
 };
-
-
-
 </script>

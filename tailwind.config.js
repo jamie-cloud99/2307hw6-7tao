@@ -40,6 +40,9 @@ module.exports = {
       spacing: {
         15: "60px",
       },
+      borderWidth: {
+        3: '3px'
+      }
     },
   },
   plugins: [
