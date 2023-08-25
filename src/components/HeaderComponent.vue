@@ -1,7 +1,5 @@
 <template>
-  <header
-    class="bg-light sticky top-0 z-[100] border-b-2 py-6 lg:border-b-3"
-  >
+  <header class="sticky top-0 z-[100] border-b-2 bg-light py-6 lg:border-b-3">
     <div class="container">
       <div class="items-center justify-between lg:flex">
         <div class="flex justify-between lg:gap-12">
@@ -18,13 +16,13 @@
           </div>
           <div class="flex items-center">
             <input
-              class="form-input h-10 w-[167px] border-2 border-primary bg-transparent placeholder:text-[#4F4F4F] focus:border-primary focus:ring-secondary"
+              class="form-input h-10 w-[167px] border-2 border-primary bg-transparent placeholder:text-[#4F4F4F] focus:border-primary focus:ring-secondary lg:h-[51px] lg:w-[284px]"
               type="text"
               placeholder="探索活動"
             />
             <button
               type="button"
-              class="h-10 w-10 border-2 border-l-0 border-primary bg-primary text-secondary transition-colors duration-300 hover:bg-secondary hover:text-primary"
+              class="h-10 w-10 border-2 border-l-0 border-primary bg-primary text-secondary transition-colors duration-300 hover:bg-secondary hover:text-primary lg:h-[51px] lg:w-[51px]"
             >
               <i class="icofont-search-1"></i>
             </button>
@@ -40,14 +38,14 @@
         <div class="hidden lg:flex lg:gap-6">
           <RouterLink
             to="/"
-            class="font-Yese hover:text-secondary-dark block text-lg"
+            class="block font-Yese text-lg hover:text-secondary-dark"
           >
             <i class="icofont-ui-file mr-1"></i>
             REGISTER
           </RouterLink>
           <RouterLink
             to="/"
-            class="font-Yese hover:text-secondary-dark block text-lg"
+            class="block font-Yese text-lg hover:text-secondary-dark"
           >
             <i class="icofont-ui-user mr-1"></i>
             LOGIN

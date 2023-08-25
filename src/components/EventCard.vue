@@ -1,17 +1,17 @@
 <template>
   <div>
-    <h3 class="font-Yese mb-2 text-[32px] lg:mb-3 xl:text-[48px]">
+    <p class="font-Yese mb-2 text-[32px] lg:mb-3 xl:text-[48px]">
       {{ props.event.date }}
-    </h3>
+    </p>
     <hr class="mb-4 border-b-3 lg:mb-3" />
     <img
       class="mb-2 block h-[210px] w-full object-cover lg:mb-3 lg:h-[255px]"
       :src="$format.getImageUrl(props.event.imgPath)"
       :alt="props.event.title"
     />
-    <h4 class="mb-2 font-serif text-lg lg:mb-3 lg:text-2xl">
+    <h3 class="mb-2 font-serif text-lg lg:mb-3 lg:text-2xl">
       {{ props.event.title }}
-    </h4>
+    </h3>
     <p class="mb-4 line-clamp-3">{{ props.event.description }}</p>
     <div class="flex items-center justify-between border-y-2">
       <a href="#" class="py-2 font-serif font-bold block hover:underline">

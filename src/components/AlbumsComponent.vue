@@ -1,6 +1,6 @@
 <template>
   <ul class="grid grid-cols-12 gap-x-2 gap-y-11 md:gap-6">
-    <li
+    <li data-aos="zoom-in"
       v-for="photo in albums"
       :key="photo.title"
       class="col-span-10 col-start-2 md:col-span-6 xl:col-span-3"
@@ -24,6 +24,10 @@
 
 <script setup>
 import { reactive } from "vue";
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 const albums = reactive([
   {
@@ -55,9 +59,25 @@ const albums = reactive([
 const getRotationClass = () => {
   albums.forEach((item) => {
     item.rotation =
-      item.rotate >= 0 ? `rotate-${item.rotate}` : `-rotate-${-item.rotate}`;
+      item.rotate >= 0 ? `c-rotate-${item.rotate}` : `-c-rotate-${-item.rotate}`;
   });
 };
 
 getRotationClass();
 </script>
+
+
+<style>
+.c-rotate-2 {
+  @apply rotate-2
+}
+
+.-c-rotate-sm {
+  @apply rotate-2
+}
+
+
+.-c-rotate-0 {
+  @apply rotate-0
+}
+</style>

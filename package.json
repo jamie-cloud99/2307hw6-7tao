@@ -9,6 +9,8 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "aos": "^2.3.4",
+    "gsap": "^3.12.2",
     "pinia": "^2.1.4",
     "tw-elements": "^1.0.0-beta3",
     "vue": "^3.3.4",
