@@ -64,7 +64,7 @@
         </li>
       </ul>
       <SectionTitle data-aos="fade-in" :title="sections[1]" class="mb-6 lg:mb-8" />
-      <div class="mb-8 grid grid-cols-1 gap-x-6 gap-y-3 lg:grid-cols-12">
+      <div class="mb-8 grid grid-cols-1 gap-x-6 gap-y-3 lg:grid-cols-12 overflow-hidden">
         <div data-aos="fade-up-right" class="col-span-1 lg:col-span-7">
           <img
             :src="$format.getImageUrl(onlineEvent.imgPath)"
